@@ -6,27 +6,140 @@
     <meta property="og:title" content="조은이네 사이트" />
     <meta property="og:description" content="패스트캠퍼스 5기 자료" />
     <meta property="og:image" content="https://scontent.xx.fbcdn.net/hphotos-xal1/v/t1.0-9/12687774_966191323463846_7157252101747174324_n.jpg?oh=6110b0d06cd8c2b112e636a6cf33ad8e&oe=57272C54" />
+    <style>
+      .menu {width:140px;}
+      .price {width:150px;}
+      .favor {width:100px}
+      .first td,
+      .first th {color:red}
+    </style>
     <title>조은</title>
   </head>
   <body>
+    <p>조은은 치킨이다</p>
+    <table border=1>
+      <caption>치킨매니아 치킨메뉴</caption>
+      <colgroup>
+        <col class="menu" />
+        <col class="price" />
+        <col class="favor" />
+      </colgroup>
+      <thead>
+        <tr class="first">
+          <th>메뉴명</th>
+          <th>가격</th>
+          <th>인기도</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>합계</td>
+          <td>28000원</td>
+          <td></td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <td>새우치킨</td>
+          <td>
+            <table>
+              <caption>상세가격</caption>
+              <thead>
+                <tr>
+                  <th>메뉴</th>
+                  <th>가격</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>레귤러</td>
+                  <td>27000</td>
+                </tr>
+                <tr>
+                  <td>레귤러</td>
+                  <td>27000</td>
+                </tr>
+                <tr>
+                  <td>레귤러</td>
+                  <td>27000</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="2">간장치킨</td>
+          <td colspan="2">14000원</td>
+        </tr>
+        <tr>
+          <td>27000원</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- FORM 예제 -->
+    <form>
+      <input type="text" required>
+      <input id="male" type="radio" name="gender" />
+      <label for="male">남자</label>
+      <input id="female" type="radio" name="gender" />
+      <label for="female">여자</label>
+      <input type="text" maxlength="10">
+      <select>
+        <option value="콜라">콜라</option>
+        <option value="사이다">사이다</option>
+        <option value="스프라이트">스프라이트</option>
+        <option value="닥터페퍼">닥터페퍼</option>
+      </select>
+      <textarea></textarea>
+      <button type="submit">전송하기</button>
+    </form>
     <article>
       <h1>조 은 Cho Eun</h1>
       <section>
         <h2>자기소개</h2>
-        안녕하세요. 조은입니다.
-        저는 우아한형제들에서 Front-End 개발자로 일을 하고 있습니다.
+        <p class="hello">
+          안녕하세요. 조은입니다.<br />
+          저는 우아한형제들에서 Front-End 개발자로 일을 하고 있습니다.
+        </p>
+        <!-- https://validator.w3.org/ -->
+        <p class="world">
+          2011년에 대학을 졸업했고, 2012년부터 FE개발자로 근무 중이고,
+          대학은 일본에서 나왔고,
+          취미는 사진찍기 입니다. 
+          예전에는 법을 전공했습니다.
+        </p>
       </section>
       <section>
         <h2>취미</h2>
+        <ul>
+          <li>애니메이션 감상</li>
+          <li>사진 찍기</li>
+          <li>여행 가기</li>
+          <li>영화 감상</li>
+          <li>치킨</li>
+        </ul>
+        <h2>오늘 할일</h2>
+        <ol>
+          <li>출근하기</li>
+          <li>일하기</li>
+          <li>야근하기</li>
+          <li>퇴근하기</li>
+        </ol>
       </section>
       <section>
         <h2>좋아하는 것</h2>
       </section>
+      <img src="http://192.168.0.172:3000/img/carousel_1.jpg" alt="선글라스를 낀 근육질의 남성이 어딘가에 서있는 이미지" />
     </article>
+    <!-- 
+    실습 이미지 :
+    http://192.168.0.172:3000/img/carousel_1.jpg
+    http://192.168.0.172:3000/img/weekly_1.jpg
+    http://192.168.0.172:3000/img/weekly_2.jpg
+    http://192.168.0.172:3000/img/weekly_3.jpg
+
+    -->
   </body>
 </html>
-
-
-
-
-
