@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .menu {
+      background:red;
+    }
+    .menu ul {
+      margin: 0;
+      padding: 0;
+    }
+    .menu > ul > li {
+      position:relative;
+      float:left;
+      padding:20px;
+      list-style: none;
+    }
+    .menu > ul > li ul {
+      position:absolute;
+      top:0;
+      left:0;
+      background:green;
+    }
+    p {
+      width: 220px;
+      border:1px solid #555;
+      margin:20px;
+      padding:20px;
+      overflow: hidden;
+      clear: both;
+      /* left, right, both */
+    }
+    .clearfix:after {
+      content:'';
+      display:block;
+      clear:both;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu clearfix">
+    <ul>
+      <li>메뉴 1</li>
+      <li>메뉴 2
+        <ul>
+          <li>서브메뉴 1</li>
+          <li>서브메뉴 2</li>
+          <li>서브메뉴 3</li>
+          <li>서브메뉴 4</li>
+        </ul>
+      </li>
+      <li>메뉴 3</li>
+      <li>메뉴 4</li>
+    </ul>
+  </div>
+  <p>국회는 헌법 또는 법률에 특별한 규정이 없는 한 재적의원 과반수의 출석과 출석의원 과반수의 찬성으로 의결한다. <strong>가부동수</strong>인 때에는 부결된 것으로 본다.
+
+국무총리는 국회의 동의를 얻어 대통령이 임명한다. 이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다.</p>
+</body>
+</html>
