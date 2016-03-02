@@ -1,0 +1,84 @@
+/**
+ * CSS Box-model 예제입니다
+ */
+
+.block-element {
+  max-width: 970px;
+  /* width는 가로사이즈 */
+  /* 100% === 자기 부모의 가로 사이즈 */
+  
+  /* height: 180px; */
+  /* height는 세로 사이즈 */
+  /* 100% === 자기 부모의 높이 */
+  /* 웹의 기본 구조 : 가로로 늘어나는 게 아닌 세로로 길어지는 구조 */
+  /* height를 고정해준다 === 콘텐츠가 늘어나면 대응하기가 어려워 진다 */
+  
+  /*
+   * min-{width, height}
+   * min은 최솟값
+   * max-{width, height}
+   * max는 최댓값
+   */
+  
+  border:1px solid #555;
+  /*
+   * border는 외곽선
+   * border-left, border-right, border-top, border-bottom 한꺼번에 써준 형태가 위의 형태 
+   * 1px : 선의 굵기
+   * solid : 선의 형태 (solid: 실선, dashed: 가다 끊기는 선, dotted : 점선)
+   * #555 : 컬러 (어떤 형태의 컬러도 허용)
+  */
+  
+  /**
+   * border와 콘텐츠 사이 : 콘텐츠 박스 내부
+   * 간격을 주고싶다
+   */
+  padding:5px 15px;
+  /**
+   * padding: 15px
+   * padding: 15px 15px 15px 15px;
+   * padding: <top>, <right>, <bottom>, <left>
+   * padding: 10px 15px;
+   */
+  margin:15px 15px;
+  /**
+   * margin: 15px
+   * margin: 15px 15px 15px 15px;
+   * margin: <top>, <right>, <bottom>, <left>
+   * margin: 10px 15px;
+   * margin collapsing
+   * 형제 요소간 위 - 아래 margin이 들어가 있는 경우에, 그 중 큰 값의 margin만 적용된다
+   * 부모 - 자식사이에서도, 부모의 위 margin과 자식의 위 margin이 같은 경우
+   * <div>
+   *  <div style="margin-top:150px"></div>
+   * </div>
+   */
+}
+/** 
+ * width
+ * height
+ * padding (포함이 됨)
+ * border
+ * margin
+ * (line-height)
+ */
+
+.block-element {
+  width: 350px;
+  padding:0 30px;
+  border:1px solid #555;
+  /* width? 412px */
+  margin: 0 30px;
+  /* width? 412px */
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

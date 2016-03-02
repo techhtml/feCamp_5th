@@ -1,0 +1,107 @@
+/**
+ * CSS 컬러 예제입니다.
+ */
+
+.color {
+  /* 가장 많이 쓰는 건 : 해쉬값 (16진수)
+     # 뒤에 숫자 6개 (F까지 알파벳)
+     #666666, #555555, #FFFFFF -> #666, #555, #FFF
+     만약 해쉬값 6개가 똑같은 숫자라면, 2개씩 그룹을 지어서 표현할 수 있다.
+     #335566 -> #356
+   */
+  
+  /* color: rgb(0, 255, 255); */
+  /**
+   * 255에 가까울 수록 천연색
+   * r : red
+   * g : green
+   * b : blue
+   * 0에 가까울 수록 검은색
+   */
+  
+  /* color: rgba(255, 255, 255, 1); */
+  /**
+   * 255에 가까울 수록 천연색
+   * r : red
+   * g : green
+   * b : blue
+   * a : alpha (최대 : 1, 최소 : 0)
+   * 알파 90% (값: 0.9)
+   * 0에 가까울 수록 검은색
+   */
+  
+  color: hsl(120, 75%, 75%);
+  /* 
+   * h : hue (색조) 0 - 255
+   * s : saturation (채도) (0 - 100%)
+   * l : lightness (명도) (0 - 100%)
+   * a : alpha (투명도)
+   * 존재는 하지만.. 브라우저 지원율이 많이 낮.... (IE9 미만에서 안되...)
+   */
+  color: hsla(120, 75%, 75%, 1);
+
+  /*
+   * color: red;
+   * color: blue;
+  */
+  /* 키워드 (많이 사용하지 않음 / 왤까?)
+     사전 정의된 키워드만 사용 가능
+   */
+  transition:1s color;
+  /*
+   * IE에서 안됨
+   */
+}
+.color:hover {
+  color:rgb(255,0,255);
+}
+
+/*
+ * background
+ */
+
+.bg {
+  /* background:#555; */
+  height:500px;
+  /* background:url("https://scontent.xx.fbcdn.net/hphotos-xlp1/v/t1.0-0/p206x206/12376340_952123091537336_5206041307808748590_n.jpg?oh=1454003d1ca031edf3dfceb376600387&oe=5767BF8A") no-repeat; */
+  /**
+   * background
+   * backgroun-image (?, 백그라운드 이미지)
+   */
+  background-image:url(https://scontent.xx.fbcdn.net/hphotos-xlp1/v/t1.0-0/p206x206/12376340_952123091537336_5206041307808748590_n.jpg?oh=1454003d1ca031edf3dfceb376600387&oe=5767BF8A);
+  /**
+   * background-repeat (반복여부)
+   */
+  background-repeat: no-repeat;
+  /**
+   * no-repeat : 반복하지 않음
+   * repeat-x : x축으로 반복
+   * repeat-y : y축으로 반복
+   * repeat : x-y축 전체로 다 반복
+   */
+  background-position:center center;
+  /*
+   * 앞에있는 게 X축, 뒤에있는 게 Y축
+   * left top, 왼쪽 상단
+   * center center, 중앙
+   */
+  background-size:cover;
+  /*
+   * 앞에있는 게 X축, 뒤에 있는 게 Y축
+   * contain 비율상 최대한으로 가질 수 있는 사이즈
+   * cover 비율대로 늘어나거나 줄어듬.
+   * 비율이 넘치면 알아서 더 늘어남
+   * 1. 스프라이트 이미지 + 레티나 대응
+   * 2. 페이스북 커버 사진
+   */
+}
+  
+  
+  
+
+
+
+
+
+  
+  

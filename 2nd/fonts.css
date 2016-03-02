@@ -1,0 +1,149 @@
+/**
+ * CSS 폰트 예제 파일입니다.
+ */
+
+body {
+  font-family: "APPLE SD Gothic NEO", "Dotum", "돋움", sans-serif;
+  /**
+   * font-family는 폰트의 그룹
+   * 앞에서부터 뒤로 해석
+   * 맥북 : APPLE SD Gothic NEO (존재)
+   * 윈도우 : APPLE SD Gothic NEO? (존재 X)
+   * 앞에 있는 폰트가 존재하지 않을 경우, 바로 그 뒤에 있는 폰트로 렌더링 하려 한다.
+   * 한글 윈도우 폰트 이름 : 돋움
+   * 영문 윈도우 폰트 이름 : Dotum
+   * IE7은 폰트를 영문으로만 인식
+   * 앞에 있는 폰트가 영문만 표시 가능 (helvetica)
+   * 다국어 (APPLE SD Gothic NEO) 폰트는 영어 & 이모티콘을 기본으로 지원
+   * iOS 폰트 : http://iosfonts.com
+   */
+  font-family: "Helvetica NEUE", "APPLE SD Gothic NEO", sans-serif;
+  /**
+   * Helvetica NEUE는 영문만 지원
+   * 영어는 Helevetica NEUE, 한국어는 APPLE SD Gothic NEO
+   * 윈도우 : 맑은 고딕 (윈도우의 기본 고딕 폰트)
+   * 안드로이드
+   * 삼성계열 : 삼성 고딕
+   * LG계열 : LG 스마트 고딕 (APPLE SD Gothic NEO와 형제)(
+   * 팬텍계열 : 베가 고딕
+   * 안드로이드 4.4.4 이상 : 본고딕 (Noto sans)
+   * 안드로이드 4.4.3 이하 : Droid sans fallback (영문 : droid sans -> roboto)
+   * 안드로이드 2.x대 (굵기가 적용이 안되던 시절도 있었음)
+   * 아이폰
+   * 기본폰트 : APPLE SD Gothic NEO
+   * 영문폰트 : Helvetica -> Sanfrancisco
+   */
+  font-family: "San Francisco", "helvetica NEUE", "APPLE SD Gothic NEO", "Dotum", "돋움", sans-serif;
+  
+  /**
+   * font-size
+   * 기본폰트 : 16px
+   * 폰트사이즈 : 150% : 24px
+   * 1em = 부모의 폰트 사이즈 = 16px = 24px
+   * 요구 : 폰트사이즈를 14px로 줄여주세요
+   */
+  font-size: 16px;
+  /**
+   * font-size: 16px
+   * line-height: 100% - 16px
+   * line-height: 150% - 24px
+   */
+  line-height: 1.5em;
+  /**
+   * font-weight
+   * 굵기
+   * 100 (Thin)
+   * 200 (Ultra Light)
+   * 300 (Light)
+   * 400 (Default, Normal)
+   * 500 (Medium)
+   * 600 (Light Bold)
+   * 700 (Bold)
+   * 800 (Ultra Bold)
+   * 900 (Black, Heavy)
+   * 돋움 (400, 700)
+   * 맑은고딕 (400, 700)
+   * APPLE SD Gothic NEO (200 ~ 900)
+   */
+  /**
+   * 알아서 근사치에 가까운 걸로 보여줌
+   * IE는 좀 멍청해서... 간혹 안될 때... / 안드로이드 기본 브라우저 (2.x대)
+   * 위 두 브라우저는 400, 700으로 반드시 
+   */
+  font-family:"AppleSDGothicNEO-Medium", sans-serif;
+  /**
+   * 폰트 파일명을 바로 넣어서 사용할 수도 있다
+   */
+  font-style: normal;
+  /*
+   * italic : 기울임꼴
+   * oblique : 필기체 (지원 브라우저가 적다)
+   */
+  text-align:justify;
+  /*
+   * left
+   * cetner
+   * right
+   * justify (영문만 지원)
+   */
+  text-decoration: none;
+  /*
+   * line-through : 취소선
+   * underline : 밑줄
+   * overline : 윗줄
+   * none : 없애기
+   */
+  /* text-indent: -9999px; */
+  /* 
+   * text-indent : 들여쓰기
+   */
+  letter-spacing: -0.05em;
+  /**
+   * 기본 : 1px
+   * letter-spacing은 자간
+   * 음수도 넣고 양수도 넣고
+   * 구버전 IE(~ IE8)에서는 소숫점을 잘 지원하지 않아요.
+   * 소숫점픽셀 = 서브픽셀
+   */
+  word-break: break-all;
+  /**
+   * word-break : 단어별로 띄어쓰기
+   */
+  white-space: wrap;
+  /**
+   * 공백
+   * wrap : 공백문자가 있으면 띄어쓰기를 한다
+   * nowrap : 무조건 한줄로
+   */
+}
+.ejs {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*
+   * 문자 축약 CSS
+   */
+}
+p {
+  margin: 30px 0;
+}
+h1 {
+  font-size: 28px;
+}
+h1 span {
+  font-size: 2rem;
+  /* rem - root em
+     최상위 부모(body)의 폰트사이즈를 따라간다  
+     2rem = 16px * 2 = 32px
+     rem은 지원율이 낮아요... (caniuse.com, IE9부터 부분지원)
+     IE9부터 IE10까지는 폰트 사이즈에서만 적용됨. (http://caniuse.com/#search=rem)
+  */
+}
+
+
+
+
+
+
+
+
