@@ -1,0 +1,32 @@
+/**
+ * web font
+ * 폰트를 서버에 저장
+ * 유저가 이 사이트에 접속했을 때, 폰트를 서버에서 불러옴
+ * 유저가 내가 원하는 폰트로 접속할 수 있도록
+ * 1. 여러 폰트파일이 필요
+ * TTF (True Type font)
+ * OTF (Open Type Font)
+ * EOT (Embedded OpenType)
+ * WOFF (Web Open Font Format)
+ * WOFF2 (Web Open Font Format)
+ * 2. 이 폰트파일을 전부 서버에 넣어둬야 함
+ * 3. 다운로드 받는 속도
+ */
+
+/*
+ * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
+ * @font-face로 폰트를 선언
+ * font-family로 폰트 이름 정의
+ * font-style로 이 폰트의 형태
+ * font-weight로 굵기 상태를 지정
+ * src로 폰트의 경로를 지정
+ * 윤디자인연구소, 산돌고딕들의 웹폰트 라이센스 별도
+ * 나눔고딕, 나눔스퀘어 (나눔류)
+ * 제주고딕, 한나체, 주아체, 도현체 (무료 폰트)
+ * 본고딕 (noto sans, GOOGLE)
+ */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {
+    font-family: "Nanum Gothic", sans-serif;
+}

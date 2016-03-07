@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mobile</title>
+        <style>
+            body {margin:0}
+            .clearfix:after {
+                content:'';
+                display:block;
+                clear:both;
+            }
+            .wrap {
+                font-size:20px;
+                line-height:1.5em;
+                font-family:"Helvetica NEUE", "APPLE SD Gothic NEO", sans-serif;
+            }
+            .wrap div {
+                float:left;
+                width:25%;
+                padding:1em 0;
+                text-align:center;
+                /**
+                 * 소숫점 이하 단위를 쓸 때
+                 * 무한에 가까운 근사값을 유지하고자 할 때
+                 * 6자리까지 작성
+                 */
+                background:gray;
+            }
+            .wrap div:nth-child(2) {
+                background:red;
+            }
+            /**
+             * 모바일에서 작업할 때
+             * - 레이아웃 구성하기 (1번째 작업)
+             * - 폰트 구성
+             * - box-model 계산
+             * - 컬러, 배경
+             * - 애니메이션, 트랜지션
+             */
+        </style>
+    </head>
+    <body>
+        <div class="wrap clearfix">
+            <div>오늘의 패션</div>
+            <div>오늘의 패션</div>
+            <div>오늘의 패션</div>
+            <div>오늘의 패션</div>
+        </div>
+    </body>
+</html>

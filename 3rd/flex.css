@@ -1,0 +1,74 @@
+/**
+ * float는 애초부터 레이아웃을 구성하기 위해 만들어진 속성이 아니다
+ * 레이아웃을 구성하는데 그렇게 좋은 모델은 아니다
+ * flexbox
+ * flex (유연한 레이아웃을 구성하기위한 CSS 속성)
+ * display: flex;
+ * flexbox를 사용할 때는, flex display를 부모에 선언한다
+ * flex는 모바일에서도 좀 주의 해서 사용해야하는 모델 
+ * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ */
+.m {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    /* IE 10부터 지원 */
+    flex-wrap: wrap;
+    /* 자식요소의 전체 width가 부모보다 커졌을 경우 줄바꿈 되도록 */
+    /* nowrap으로 주면 한줄로 쫘르륵 */
+    /* flex-flow: column-reverse; */
+    /* row : 기본
+       row-reverse: 순서 역전
+       column : 위 - 아래로 순서 변경
+       column-reverse : 순서 역전
+     */
+}
+.flex-child {
+    -webkit-box-flex: 1; /* 구형 문법을 지원하기 위해서 사용 */
+    -moz-box-flex: 1; /* 구형 문법을 지원하기 위해서 사용 */
+    -ms-flex: 1; /* IE 10때문에 넣어줘야함 */
+    -webkit-flex: 1; /* webkit브라우저 vendor prefix */
+    flex: 1; /* 표준 문법 */
+}
+.sub {
+    /* flexbox는 width를 넣는 것보다, 더 늘어나려는 성질 */
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order:1;
+    -webkit-order:1;
+    order:1;
+}
+.main {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order:2;
+    -webkit-order:2;
+    order:2;
+}
+.wrap {
+    max-width:970px;
+    margin:0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column;
+}
+.wrap main {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+.wrap main section,
+.wrap main aside {
+    -webkit-box-flex: 1; /* 구형 문법을 지원하기 위해서 사용 */
+    -moz-box-flex: 1; /* 구형 문법을 지원하기 위해서 사용 */
+    -ms-flex: 1; /* IE 10때문에 넣어줘야함 */
+    -webkit-flex: 1; /* webkit브라우저 vendor prefix */
+    flex: 1; /* 표준 문법 */
+}

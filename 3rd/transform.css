@@ -1,0 +1,45 @@
+/**
+ * transform : 형태를 변환해주기 위한 CSS 속성
+ * 위치변경 (좌표시스템), 회전, 기울임, 크기조정
+ */
+.translate {
+    width:120px;
+    height:120px;
+    background:red;
+    -webkit-transform:translate3d(100px, 100px, 120px);
+    -moz-transform:translate3d(100px, 100px, 120px);
+    transform:translate3d(100px, 100px, 120px);
+    /*
+     * translate3d 속성은 모바일에서 GPU 가속
+     * X축, Y축, Z축
+     */
+}
+.rotate {
+    width:120px;
+    height:120px;
+    background:green;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.skew {
+    width:120px;
+    height:120px;
+    background:orange;
+    -webkit-transform:skew(22deg);
+    -moz-transform:skew(22deg);
+    transform:skew(22deg);
+}
+
+.scale {
+    width:120px;
+    height:120px;
+    margin-left:150px;
+    background:hotpink;
+    transform:scale(2);
+    /*
+     * width, height와 차이:
+     * box-model에 영향 X
+     */
+}

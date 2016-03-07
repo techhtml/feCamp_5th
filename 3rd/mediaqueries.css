@@ -1,0 +1,38 @@
+/*
+ * 미디어 쿼리
+ * 디바이스 (width)
+ * 모바일디바이스 크기 : 최대 가로사이즈 (640)
+ * 태블릿디바이스 크기 : 최소 가로사이즈 (678 - 1280)
+ * 노트북 : 최소 가로사이즈 (1280 -)
+ * 모니터 : 가로사이즈 (1920 - 2560)
+ */
+
+/**
+ * 미디어 쿼리 : @media를 활용해서 선언
+ * () 안에는 조건, 최대 가로사이즈가 640일 경우
+ * {} 안에는 조건에 충족할 경우 적용시킬 CSS
+ * and는 중복 조건
+ */
+/*
+ * 미디어쿼리의 바깥부분
+ * 공통으로 쓰는 CSS
+ */
+
+body {font-family:"helvetica"}
+
+/*
+ * 미디어쿼리는 항상 그 CSS파일의 마지막 부분
+ */
+@media (max-width:640px) {
+    /* 모바일 */
+    body {font-family:"APPLE SD Gothic NEO"}
+}
+@media (min-width:641px) and (max-width:1280px) {
+    /* 태블릿 */
+}
+@media (min-width:1281px) and (max-width:1920px) {
+    /* 노트북 */
+}
+@media (min-width:1921px) {
+    /* 큰 화면의 모니터 */
+}

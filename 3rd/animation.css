@@ -1,0 +1,83 @@
+.transition-box {
+    width:180px;
+    height:150px;
+    background:red;
+    /* 
+     * transition은 A-B 사이의 상태 변화에 애니메이션을 부여한다
+     * 첫번쨰 단위 : 시간
+     * 두번째 단위 : 어떤 속성에 애니메이션을 줄건지
+     * 세번째 단위 : 베지에 곡선 (키워드, cubic-bezier)
+     * 자바스크립트로 넣는 애니메이션보다, 
+     * transition으로 넣는 애니메이션이 무조건 빠릅니다.
+     */
+    transition: 0.5s width cubic-bezier(1,-0.49,.53,1.17), 
+                1s background;
+}
+.transition-box:hover {
+    width:500px;
+    background:green;
+}
+
+/*
+ * transition
+ * A랑 B가 바뀌는 사이를 애니메이션으로 바꿔주는 것
+ * A랑 B가 바뀌는 사이
+ * transition은 A와 B가 바뀌는 사이를 표현하기가 어렵다
+ * animation
+ * 0부터 100까지가 있고, 그 사이를 전부 애니메이션으로 줄 수 있다.
+ */
+
+.animation {
+    position:relative;
+    left: 100%;
+    width:120px;
+    height:120px;
+    background: gray;
+    /**
+     * animation 속성
+     * 첫번째 단위 : 애니메이션 이름
+     * 두번째 단위 : 시간
+     * 세번째 단위 : 베지에 곡선 (선택)
+     * 네번째 단위 : 무한대 (선택)
+     */
+    -webkit-animation: move 6s cubic-bezier(1,-0.49,.53,1.17) infinite;
+    animation: move 6s cubic-bezier(1,-0.49,.53,1.17) infinite;
+}
+/*
+ * 0% - 100%까지 프레임을 사용할 수 있음
+ */
+@-webkit-keyframes move {
+    0% {
+        left: 0;
+    }
+    40% {
+        left: 80%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    40% {
+        left: 80%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+/**
+ * 단위 : 공통
+ * width 속성, height 속성, font던 상관 없이 대부분에서 공통
+ * 
+ * CSS Units
+ * [Screen]
+ * 1. em (rem)
+ * 2. px
+ * 3. %
+ * 4. vw, vh, vmin, vmax
+ * 5. (for Time) s, ms
+ * 6. (for resolution) dpi
+ * 7. (for angle) deg
+ */
+
+.em {
+  /**
+   * em은 부모의 폰트사이즈를 기준으로 하는 단위
+   * 부모의 폰트사이즈 = 16px
+   * 자식에서 1em = 16px
+   * 10em = 160px
+   * 0.5em = 8px
+   * em의 장점 : 폰트사이즈가 바뀌어야 할 때, 유동적으로 대응하기 좋다
+   * em의 단점 : 계산하기 어렵다
+   * body의 폰트 사이즈 : 10px
+   * body 밑 section 폰트 사이즈 : 1.5em (24px)
+   * section 밑 p 폰트 사이즈 : 2em (48px)
+   * section 폰트 사이즈 : 1.2em (=== 12px)
+   */
+}
+.rem {
+  /*
+   * rem은 em과 성질은 똑같다.
+   * 부모의 폰트 사이즈 X, 루트(body요소)의 font-size를 기준으로 사이즈를 지정한다
+   * 장점 : (em에 상대적으로) 계산하기 쉬움, 유동적으로 대응하기
+   * 단점 : 브라우저 지원율이 낮다
+   * 모바일에서는 써도 좋아요
+   * PC에서는 IE 11부터 지원 (그렇게 의미있는 숫자가 아님)
+   * http://wit.nts-corp.com/2014/11/05/2317
+   * http://caniuse.com/#search=rem
+   */
+}
+.px {
+  /*
+   * 픽셀 = 픽셀
+   * 화면을 나타내는 가장 작은 단위 (픽셀)
+   */
+}
+.percentage {
+  /*
+   * 0부터 무한대%까지 사용 가능
+   * 어떤 속성에 적용되느냐에 따라서, 기준점이 달라진다.
+   * width에서 사용한다 : 100% = 부모의 가로 사이즈
+   * height에서 사용한다 : 100% = 부모의 높이
+   * padding에서 사용한다 : 100% = 부모의 가로사이즈
+   * margin에서 사용한다 : 안먹혀요...
+   * font-size에서 사용한다 : 100% = 부모의 폰트 사이즈
+   * 유동적인 화면에 대응하고자 할 때 굉장히 유용
+   * 모바일 화면같이 특정 사이즈를 측정 불가능한 경우
+   * 태블릿 화면도 마찬가지
+   */
+}
+/**
+ * 모바일
+ * Window 8.1
+ * Mobile IE / PC IE랑 다름
+ * caniuse에도 나옴
+ * Mobile IE 10부터 시작
+ */
+
+/**
+ * v시리즈
+ * vw, vh, vmin, vmax
+ * v = viewport
+ * w = width
+ * h = height
+ * vw = viewport width
+ * vh = viewport height
+ * 아이폰 (320 x 480)
+ * 1vw = (viewport 가로사이즈 / 100) = 3.2
+ * 1vh = (viewport 세로사이즈 / 100) = 4.8
+ * vmin = 최솟값 (min-width, min-height) = 위와 단위는 동일
+ * vmax = 최댓값 (max-width, max-height) = 위와 단위는 동일
+ * 브라우저 지원율이 낮음
+ * 모바일에서는 그나마... 쓸만한데... 음.. 지원율이... 음..
+ * PC에서는 포기하세요
+ */
+
+/**
+ * 5. (for Time) s, ms (transition, animation)
+ * 6. (for resolution) dpi (dot per inch, 미디어쿼리)
+ * 7. (for angle) deg (degree, transform)
+ */
+
+.css3 {
+  transition:1s color;
+  transform:rotate(320deg);
+}
+@media (resolution:109dpi) {
+  
+}
+
+
+
+

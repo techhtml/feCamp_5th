@@ -1,0 +1,105 @@
+/**
+ * CSS Position
+ * 정의 : 좌표 시스템을 이용한 것
+ * X축과 Y축의 좌표를 이용하여 요소의 위치(Position)를 잡음
+ * 단점 : 간혹 Normal Flow를 깨트릴 때가 있다.
+ * 기본속성값 : static (정적)
+ */
+body {
+  height:10000px;
+}
+.static {
+  position: static; 
+  /**
+   * Default
+   * 명시적으로 사용하는 일은 거의 없다.
+   * position 속성을 넣었다가, 다시 초기화 시키고 싶을 때
+   * 좌표 시스템을 사용하지 않는다.
+   */
+}
+
+.relative {
+  position: relative;
+  /**
+   * relative (상대값)
+   * flow를 깨트리지 않음 (다만 조금 이상해질 때가 있기는 함)
+   * 좌표를 넣는 속성 : top, left, bottom, right
+   * 좌표 시스템을 사용하는 (=== position:static을 제외한) 요소들에서 사용
+   * flow에 영향을 주지는 않지만, 좌표시스템을 이용하게 될 경우,
+   * 다른 요소가 이 요소의 이동한 위치가 어딘지 알 수가 없다
+   */
+  /*
+  top: 80px;
+  left: 120px;
+  */
+  width: 180px;
+  height: 100px;
+  background: red;
+}
+.absolute {
+  position: absolute;
+  /**
+   * 절대값
+   * 자기 부모가 좌표시스템을 사용할 경우에는 자기 부모의 영점
+   * 자기 부모가 좌표시스템을 사용하지 않을 경우에는 좌표시스템을 사용하는 조상의 영점
+   * 조상이 좌표시스템을 사용하지 않을 경우 body의 영점
+   * absolute는 flow에 영향을 받지 않는다.
+   * 다른 요소가 absolute인 요소가 존재하는 지 알 수 없다.
+   * 보통 absolute인 요소의 부모로, relative인 요소를 많이 사용한다.
+   * + 부모에 padding 속성을 이용해서, absolute인 요소가 있을 수 있는 빈 공간을 생성하기도 한다
+   */
+  left:0;
+  top:0;
+  width:500px;
+  height:120px;
+  background:green;
+  z-index:2;
+}
+.fixed {
+  position: fixed;
+  /*
+   * 고정값
+   * absolute랑 성질 자체는 비슷
+   * 무조건, 브라우저를 기준으로 고정 (body의 영점이 무조건 기준)
+   * transform 요소의 자식일 경우에는, 제대로 동작하지 않음.
+   * 스크롤을 하더라도, 그 위치에 고정
+   * 모바일 iOS에서 버그가 *매우* 많아요
+   */
+  top:0;
+  left:0;
+  width:200px;
+  height: 180px;
+  background:gray;
+  z-index:1;
+}
+/**
+ * 모든 좌표 시스템은 z축을 가짐
+ * 코드상에서 아래에 있는 요소가, 위에 있는 요소보다 z축이 더 높아요
+ * z-index 속성
+ * z축을 지정해주는 속성 (숫자)
+ * 숫자가 높은 게, 숫자가 낮은 요소보다 위에 나타나게 된다.
+ */
+.sticky {
+  position: sticky;
+  /*
+   * static + fixed
+   * 브라우저 스크롤이 해당 요소의 상단까지 갈 경우, 고정되기 시작한다.
+   * 브라우저 지원율 : Firefox, Safari (모바일 포함)
+   * 크롬은 개발 시작 / IE는 고려 중
+   * http://caniuse.com/#search=stick
+   */
+  top:0;
+  left:0;
+  width:180px;
+  height:50px;
+  background:orange;
+}
+
+
+
+
+
+
+
+
+
