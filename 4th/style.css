@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+/**
+ * 1. HTML 작성
+ * 1.1. HTML Validator 돌려보기
+ * - 에러가 나타나지 않으면, 1차적으로 패스
+ * 1.2. 나보다 더 뛰어난 사람에게 코드 리뷰 받기
+ * 2. CSS 작성
+ * 2.1. 오늘 수업할 내용
+ * 3. 필요한 이미지 있으면 짜르고...
+ * 4. 화면 잘 나오나 테스트
+ * 5. JavaScript
+ */
+
+/**
+ * charset (문자가 깨지지 않도록 선언해주는 건데, 안해줘도 되요)
+ * reset.css를 가져오기 (Eric Meyer reset.css)
+ * [여기서부터 여러분들의 일]
+ * 셀렉터
+ * - 공통으로 쓰이는 CSS
+ * - 클래스명
+ * - btn (버튼)
+ * - ico (아이콘)
+ * - bul (불렛 아이콘)
+ * - l_ (레이아웃)
+ * - l_header (헤더와 관련한 레이아웃)
+ * - wrap (특정한 자식을 감싸는 용도의 부모)
+ * - header, container, footer (헤더, 컨테이너, 푸터)
+
+ * 속성의 순서
+ * 레이아웃 관련 속성 (float, display, width, height, padding, margin, border)
+ * 폰트 (font-size, line-height, font-family, letter-spacing, 기타 폰트 속성)
+ * 컬러, 배경 (박스모델에 영향 X) (color, background)
+ * CSS3 Animation, CSS3 Trnasition, CSS3 Transform
+ */
+
+/**
+ * Front-End 개발자
+ * 모든 브라우저 대응
+ * 디자이너, 기획자, 백엔드 개발자 사이에 껴서 고생
+ * 솔로 플레이
+ * HTML, CSS 답 X
+ * 조 은 (주임), 정 X (부사수)
+ * HTML 스타일 하나도 안 맞음
+ * CSS 스타일 하나도 안 맞음 (꼼수가 많아지면....)
+ * 프론트엔드 개발자가 협업
+ * HTML + CSS (부사수)
+ * JS (저)
+ * HTML + CSS (외주)
+ * HTML + CSS + JS (저)
+ * 공통 컨벤션
+ 
+ * Front-End 개발자
+ * HTML + CSS + JavaScript
+ * 성능측정 (웹 애니메이션 퍼포먼스, 서버와 통신 시간, 지연 시간)
+ * 레거시 브라우저 대응 (IE 6, 7, 8, 9)
+ * R&D (미래 기술에 대한 대비)
+
+ * 렌더링 (웹이 어떻게 동작하는 지, 성능 최적화)
+ * 웹접근성 (스크린리더, 점자, 지체장애인, 다양한 장애인분들이 웹을 사용할 수 있도록)
+ * 웹표준 (모든 브라우저에서 내 사이트가 잘 나오도록)
+ * 한해동안 CSS 속성이 20 ~ 30개
+ * 한해동안 CSS 속성 제안 80 ~ 120개
+ * 한해동안 나오는 문서 12개 - 14개
+ * 디자이너와 기획자에게 안되는 이유 납득시키기
+ * 되는 부분에 대한 이해도 향상
+ 
+ * font-family는 반드시 root 요소한테 선언할 것 (body요소에 쓸 것)
+ * color는 반드시 부모요소에 작성하거나, 클래스로 쓸 것.
+ * 클래스명은... 아래 규칙을 따를 것
+ */
+
+.layer {
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:250px;
+    min-height:250px;
+    margin:-125px 0 0 -125px;
+    border:1px solid #555;
+    background:#fff;
+    /* 
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    */
+}
+.layer.black {
+    background:#000;
+}
+
+.header {}
+.header .logo {
+    float:left
+}
+.header .logo a {
+    color:#000;
+    text-decoration: none;
+}
+
+.btn {
+    padding:3px 10px;
+    border:1px solid #666;
+    color:#fff;
+    background:gray;
+    font-size:12px;
+    line-height:1.5;
+    font-family:"Helvetica", sans-serif;
+    text-decoration:none;
+}
+.btn.btn_warning {
+    background:red;
+}
+.btn.btn_success {
+    background:green;
+}
+.btn.btn_next {
+    
+}
+.btn.btn_prev {
+    
+}
+
+.inp {}
+ q.inp.disable {}
+.inp.search {}
+
+header {}
+header:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+header h1 {
+    float:left
+}
+header input {
+    float:right
+}
+
+/**
+ * 장점 : HTML을 완벽히 이해할 수 있다
+ * 단점 : 여러 페이지에서 공통으로 쓰이는 건지, 메인에서만 쓰이는 건지 구분짓기가 어렵다.
+ * 단점 : 2번째, 클래스를 사용하는 기법보다 절대적으로 느림
+ */
+main {}
+main h1 {}
+main section {}
+main section h2 {}
+main section article {}
+
+/**
+ * 장점 : 빠르다.
+ * 장점 : 직관적.
+ * 단점 : HTML 태그 구조를 명확히 이해하기가 많이 어려움
+ */
+.container {}
+    .main_title {}
+    .main_content {}
+        .sub_title {}
+        .sub_content {}
+/**
+ * HTML 태그를 나열하는 것
+ * 클래스를 활용하는 것 (얘가 더 좋아보임)
+ * 가독성 vs 성능
+ */
+
+/*
+ * 성능
+ * 웹페이지라는건... 궁극적으로... 답이 없어요
+ * 1. 가독성 측면
+ * 2. 크로스 브라우징
+ * 3. 성능
+ */
+
+.side-menu {
+    position: absolute;
+    left:-100%;
+    top:50%;
+    bottom:0;
+    width:50%;
+    background:red;
+    transition:0.5s all ease;
+    /** 
+     * CSS
+     * 렌더링엔진 (소프트웨어 좀 깊숙한 곳)
+     * 자바스크립트
+     * 자바스크립트 코드 1초에 24번 돌아가면서 CSS를 변경
+     */
+}
+.sub-menu {
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:50%;
+    width:50%;
+    background:gray;
+    transition:0.5s all ease;
+    transform:translate3d(-100%, 0, 0);
+}
+body:hover .sub-menu {
+    transform:translate3d(0, 0, 0);
+}
+body:hover .side-menu {
+    left:0;
+}
+
+/**
+ * reflow, repaint
+ * left: -100% > left: 0
+ * 1초 동안, 24프레임 (의미있는 수치 24-30프레임, 영화 애니메이션)
+ * 0.1초 2.2프레임
+ * 0.05초 1.1프레임 (1프레임)
+ * 0.05초 1번의 reflow
+ * 10초동안 박스 10개를 옮겨야 함
+ * 
+ * 과부하
+ * 1초 동안, 12프레임 
+ * 0.1초 1.1프레임
+ * reflow (flow, normal flow만 존재 X)
+ * flow를 재계산, 배치를 새로함
+ * reflow 과정 (비용 큼)
+ */
+
+/*
+ * 레이아웃에 조금이라도 영향을 준다면 100% reflow
+ * width, height, padding, margin, border
+ * float, position, left, top, right, bottom
+ * font관련 속성 전부 (font, text)
+ * overflow, clear
+
+ * reflow를 발생시키지 않는데, 위치를 바꾸는 속성 (1개)
+ * transform: translate()
+ 
+ * repaint
+ * color, opacity, outline, background
+ * http://www.html5rocks.com/ko/tutorials/speed/high-performance-animations/
+ */
+
+
+
+
+
+

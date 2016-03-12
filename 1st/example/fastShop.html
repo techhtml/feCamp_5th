@@ -3,11 +3,49 @@
   <head>
     <meta charset="UTF-8">
     <title>FastShop</title>
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      header {overflow:hidden;}
+      header input {float:left;}
+      header .main-menu {float:right}
+      header .main-menu ul {overflow:hidden}
+      header .main-menu li {float:left}
+      /* max, min, width */
+      main {max-width:600px;margin:auto;}
+      main h1 {}
+      main .sub-menu {}
+      main .sub-menu ul {}
+      main .sub-menu li {float:left}
+      .clearfix:after {
+        content:'';
+        display:block;
+        clear:both;
+      }
+      .visual {}
+      .visual img {width:100%}
+      section {}
+      section h2 {}
+      section ul {}
+      section li {
+        float:left;
+        width:200px;
+      }
+      address {background:red}
+      
+      section li a {}
+      section li img {width:200px}
+      section li p {}
+      section li span {}
+      footer {background:black}
+      footer .footer-wrap {width:600px;margin:auto}
+      footer .footer-item {float:left;margin-right:40px;color:white;}
+      footer .footer-item a {color:inherit;}
+    </style>
   </head>
   <body>
     <header>
       <input type="text">
-      <nav>
+      <nav class="main-menu">
         <ul>
           <li><a href="#">로그인</a></li>
           <li><a href="#">회원가입</a></li>
@@ -18,8 +56,8 @@
     </header>
     <main>
       <h1>FAST SHOP</h1>
-      <nav>
-        <ul>
+      <nav class="sub-menu">
+        <ul class="clearfix">
           <li><a href="#">WHAT'S NEW</a></li>
           <li><a href="#">CLOTHING</a></li>
           <li><a href="#">SHOES</a></li>
@@ -28,15 +66,15 @@
           <li><a href="#">SALE</a></li>
         </ul>
       </nav>
-      <div>
-        <img src="http://192.168.0.172:3000/img/carousel_1.jpg" alt="">
+      <div class="visual">
+        <img src="http://192.168.0.76:3000/img/carousel_1.jpg" alt="">
       </div>
       <section>
         <h2>WEEKLY MOST WANTED</h2>
-        <ul>
+        <ul class="clearfix">
           <li>
             <a href="#">
-              <img src="http://192.168.0.172:3000/img/weekly_1.jpg" alt="">
+              <img src="http://192.168.0.76:3000/img/weekly_1.jpg" alt="">
               <p>
                 Our Best Jumpsuits
                 <span>Shop Now</span>
@@ -45,7 +83,7 @@
           </li>
           <li>
             <a href="#">
-              <img src="http://192.168.0.172:3000/img/weekly_2.jpg" alt="">
+              <img src="http://192.168.0.76:3000/img/weekly_2.jpg" alt="">
               <p>
                 Stylish. Warm. Done.
                 <span>Top Selling Winter Coats</span>
@@ -54,7 +92,7 @@
           </li>
           <li>
             <a href="#">
-              <img src="http://192.168.0.172:3000/img/weekly_3.jpg" alt="">
+              <img src="http://192.168.0.76:3000/img/weekly_3.jpg" alt="">
               <p>
                 Black &amp; White Vision
                 <span>Our Fashion Director's Faves</span>
@@ -65,34 +103,29 @@
       </section>
     </main>
     <footer>
-      <h4>INFORMATION</h4>
-      <ul>
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">인재채용</a></li>
-        <li><a href="#">제휴문의</a></li>
-        <li><a href="#">환불 및 교환</a></li>
-      </ul>
-      <h4>INFORMATION</h4>
-      <ul>
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">인재채용</a></li>
-        <li><a href="#">제휴문의</a></li>
-        <li><a href="#">환불 및 교환</a></li>
-      </ul>
-      <h4>INFORMATION</h4>
-      <ul>
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">인재채용</a></li>
-        <li><a href="#">제휴문의</a></li>
-        <li><a href="#">환불 및 교환</a></li>
-      </ul>
-      <h4>INFORMATION</h4>
-      <ul>
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">인재채용</a></li>
-        <li><a href="#">제휴문의</a></li>
-        <li><a href="#">환불 및 교환</a></li>
-      </ul>
+      <div class="footer-wrap clearfix">
+        <div class="footer-item">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">인재채용</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">환불 및 교환</a></li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">인재채용</a></li>
+            <li><a href="#">제휴문의</a></li>
+            <li><a href="#">환불 및 교환</a></li>
+          </ul>
+        </div>
+      </div>
+      <address>
+        12345677
+      </address>
     </footer>
   </body>
 </html>

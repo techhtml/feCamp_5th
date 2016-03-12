@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>4주차 - 주말</title>
+        <style>
+            /**
+             * HTML을 다 작성한 후
+             * CSS 작성
+             */
+            /**
+             * 설계 : 큰 단위 (레이아웃)
+             */
+            body {
+                margin:0;
+                font-family: sans-serif;
+            }
+            header {}
+            header .gnb {
+                background:#eee;
+            }
+            header .search_box {
+                float:left;
+                padding:0.5em 1em;
+            }
+            header .search_box input {
+                background:none;
+                border:0;
+                font-size:0.8em;
+            }
+            header .search_box input::-webkit-input-placeholder {
+                color:gray;
+            }
+            header .user_menu {
+                float:right;
+            }
+            header .user_menu ul {
+                padding:0;
+                margin:0;
+            }
+            header .user_menu li {
+                position:relative;
+                float:left;
+                list-style:none;
+                padding:0.8em 1em;
+                font-size:0.9em;
+                line-height:1;
+            }
+            header .user_menu li + li:before {
+                content:'';
+                position:absolute;
+                left:0;
+                top:0.9em;
+                display:block;
+                width:1px;
+                height:0.7em;
+                background:#999;
+            }
+            header .user_menu li a {
+                color:#666;
+                text-decoration:none;
+            }
+            header h1 {
+                text-align:center;
+            }
+            header h1 img {
+                width:361px;
+                height:56px;
+            }
+            header .main_menu {
+                width:1010px;
+                margin:auto;
+            }
+            header .main_menu ul,
+            header .main_menu li {
+                padding:0;
+                margin:0;
+                list-style:none;
+            }
+            header .main_menu li {
+                float:left;
+                width:16.666666%;
+            }
+            header .main_menu li a {
+                display:block;
+                padding:0.5em 0;
+                color:#000;
+                text-decoration: none;
+                text-align:center;
+                transition:0.3s all;
+                font-weight:bold;
+            }
+            header .main_menu li a:hover {
+                color:#fff;
+                background:#000;
+            }
+            main {
+                width:1010px;
+                margin:auto;
+                /*
+                 * 1010이 1024 기준의 최대 사이즈
+                 * 970이 12 grid system의 기본 사이즈
+                 */
+            }
+            main .image-slider {
+                width:100%;
+                height:600px;
+                font-size:0;
+                overflow:hidden;
+            }
+            main .image-slider .image-mask {
+                display:inline-block;
+                width:100%;
+                height:100%;
+            }
+            main section {
+                
+            }
+            main section h2 {
+                text-align:center;
+                font-weight:300;
+            }
+            main section ul {
+            
+            }
+            main section ul,
+            main section li {
+                padding:0;
+                margin:0;
+                list-style:none;
+            }
+            main section li {
+                position:relative;
+                float:left;
+                width:33.333333%;
+            }
+            main section li a {
+                color:black;
+            }
+            main section li dl {
+                position:absolute;
+                width:100%;
+                left:0;
+                bottom:0;
+                margin:0;
+                padding:0.7em;
+                background:rgba(255,255,255,0.7);
+                text-align:center;
+            }
+            main section li dt {
+                font-size:1.4em;
+                font-weight:200;
+            }
+            
+            main section li dd {
+                margin:0;
+                font-size:1em;
+                font-weight:200;
+            }
+            footer {}
+            .clearfix:after {
+                content:'';
+                display:block;
+                clear:both;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="clearfix">
+            <div class="gnb clearfix">
+                <div class="search_box">
+                <input type="text" placeholder="Search...">
+            </div>
+                <nav class="user_menu">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">장바구니</a></li>
+                </ul>
+            </nav>
+            </div>
+            <h1><a href="#"><img src="http://techhtml.github.io/fastshop/img/logo.png" alt="FAST SHOP"/></a></h1>
+            <nav class="main_menu">
+                <ul class="clearfix">
+                    <li><a href="#">WHAT'S NEW</a></li>
+                    <li><a href="#">CLOTHING</a></li>
+                    <li><a href="#">SHOES</a></li>
+                    <li><a href="#">BAGS</a></li>
+                    <li><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">SALE</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="clearfix">
+            <div class="image-slider">
+                <div class="image-mask" style="background-image:url(http://techhtml.github.io/fastshop/img/carousel_1.jpg)"></div>
+                <div class="image-mask" style="background-image:url(http://techhtml.github.io/fastshop/img/carousel_2.jpg)"></div>
+                <div class="image-mask" style="background-image:url(http://techhtml.github.io/fastshop/img/carousel_3.jpg)"></div>
+                <div class="image-mask" style="background-image:url(http://techhtml.github.io/fastshop/img/carousel_4.jpg)"></div>
+            </div>
+            <section>
+                <h2>WEEKLY MOST WANTED</h2>
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_1.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_2.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_3.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>NEW ARRIVALS</h2>
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_1.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_2.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="http://techhtml.github.io/fastshop/img/weekly_3.jpg" alt=""/>
+                            <dl>
+                                <dt>Our Best Jumpsuits</dt>
+                                <dd>Shop Now</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="clearfix">FOOTER</footer>
+    </body>
+</html>

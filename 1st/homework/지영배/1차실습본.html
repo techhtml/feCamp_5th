@@ -1,0 +1,176 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport" content="content"> 
+<link rel="stylesheet" href="css/fastshop.css"> 
+<title>FastShop</title> 
+</head> 
+<body> 
+<!-- 수업 시간에 작성한 html fastshop --> 
+
+<main> 
+<!-- Header fixed bar --> 
+<header> 
+<!-- input에 text를 입력하고 img 아이콘을 클릭 시 action에 기입된 주소로 넘겨준다고 생각함. 
+a태그는 단순 페이지 이동인데 여기는 search에 value를 조회해야 해서 form으로 처리하는게 맞는건가?!--> 
+<form action="http://192.168.0.172:3000/browse/all?q="> 
+<img src="search.png" alt=""> 
+<input type="text" value="Search..."/> 
+</form> 
+<ul> 
+<li><a href="#">로그인</a></li> 
+<li><a href="#">회원가입</a></li> 
+<li><a href="#">고객센터</a></li> 
+<!-- 장바구니 span으로 처리할 것 생각 못하고 그냥 다른걸로 카운트 하려고 생각함..-->
+<li><a href="#"><img src="바구니.png" alt="">장바구니<span>0</span></a></li> 
+</ul> 
+</header> 
+
+<!-- Main Title --> 
+<h1>FAST SHOP</h1> 
+
+<!-- Navigation --> 
+<nav> 
+<ul> 
+<li><a href="#">WHAT'S NEW</a></li> 
+<li><a href="#">CLOTHING</a></li> 
+<li><a href="#">SHOES</a></li> 
+<li>BAGS</li> 
+<li>ACCESSORIES</li> 
+<li>SALE</li> 
+</ul> 
+</nav> 
+<div class="main_img"> 
+<img src="images/carousel_1.jpg" alt="메인 페이지 배경입니다."> 
+<!-- hover 했을 때 표시 될 수 있게 평상시 화살표이미지 숨김 --> 
+<img src="direction.jpg" alt=""> 
+</div> 
+<br /> 
+
+<!-- WEEKLY MOST WANTED --> 
+<!-- 위에는 li로 처리했는데 여기는 왜 이렇게 작성했을까..시간내에 작성하려고 하다가 이렇게 된건가..?! --> 
+<div class="weekly_img_1"> 
+<a href="#"> 
+<img src="images/weekly_1.jpg" alt=""> 
+<span class="weekly_img_1_des"> 
+<p>Out Best Jumpsuits</p> 
+<p>Shop Now ></p> 
+</span> 
+</a> 
+</div>
+
+<div class="weekly_img_2"> 
+<a href="#"> 
+<img src="images/weekly_2.jpg" alt=""> 
+<span> 
+<p>Stylish. Warm. Done.</p> 
+<p>Top Selling Winter Coats ></p> 
+</span> 
+</a> 
+</div> 
+
+<div class="weekly_img_3"> 
+<a href="#"> 
+<img src="images/weekly_3.jpg" alt=""> 
+<span> 
+<p>Black & White Vision</p> 
+<p>Our Fashion Director's Faves ></p> 
+</span> 
+</a> 
+</div> 
+
+<!-- 이 부분은 선생님 코드 --> 
+<!-- <section> 
+<h2>WEEKLY MOST WANTED</h2> 
+<ul> 
+<li> 
+<a href=""> 
+<img src="" alt=""> 
+<p> 
+<span></span> 
+</p> 
+</a> 
+</li> 
+
+<li> 
+<a href=""> 
+<img src="" alt=""> 
+<p> 
+<span></span> 
+</p> 
+</a> 
+</li> 
+
+<li> 
+<a href=""> 
+<img src="" alt=""> 
+<p> 
+<span></span> 
+</p> 
+</a> 
+</li> 
+</ul> 
+</section> --> 
+
+<!-- 아직 안배운거지만 알고 있는거 css에서 float 했을때 아래 h2 NEW ARRIVALS가 따라 붙지 않게 하려면 
+clear : both; 해야 하는 것으로 알고 있다. --> 
+<br /> 
+<div class="clearfix"> 
+</div> 
+
+<!-- NEW ARRIVALS --> 
+<h2>NEW ARRIVALS</h2> 
+<br /> 
+
+<!-- footer --> 
+<!-- 1.로고넣기 2.li 동그라미는 css처리 --> 
+<footer> 
+<img src="footer.jpg" alt=""> 
+<section> 
+<h4>INFORMATION</h4> 
+<ul> 
+<li><a href="#">회사소개</a></li> 
+<li><a href="#">인재채용</a></li> 
+<li><a href="#">제휴문의</a></li> 
+<li><a href="#">환불 및 교환</a></li> 
+</ul> 
+</section> 
+
+<section> 
+<h4>PRIVACY</h4> 
+<ul> 
+<li><a href="#">개인정보 취급방침</a></li> 
+<li><a href="#">이메일 무단수집거부</a></li> 
+<li><a href="#">청소년 보호 정책</a></li> 
+</ul> 
+</section> 
+
+<section> 
+<h4>BROWSE SHOP</h4> 
+<ul> 
+<li><a href="#">Clothing</a></li> 
+<li><a href="#">Shoes</a></li> 
+<li><a href="#">Bags</a></li> 
+<li><a href="#">Accessories</a></li> 
+<li><a href="#">Sale</a></li> 
+</ul> 
+</section> 
+
+<section> 
+<h4>STAY CONNECT</h4> 
+<ul> 
+<li><a href="#"><img src="facebook_icon.jpg" alt="">페이스북</a></li> 
+<li><a href="#"><img src="twitter_icon.jpg" alt="">트위터</a></li> 
+<li><a href="#"><img src="instagram_icon.jpg" alt="">인스타그램</a></li> 
+<li><a href="#"><img src="pinterest_icon.jpg" alt="">핀터레스트</a></li> 
+</ul> 
+</section> 
+<address>@Copyright 2014 FastShop. All Rights Reserved.</address> 
+</footer> 
+
+</main> 
+</body> 
+</html> 
+[출처] 패캠-프론트입문 fastshop|작성자 Newrun
+
