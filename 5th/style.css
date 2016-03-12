@@ -1,0 +1,292 @@
+/**
+ * CSS 방법론
+ * 어떻게 CSS를 잘 관리할거냐.
+ * SMACSS [대표적으로 많이 쓰임]
+ * BEM
+ * OOCSS [OOSASS]
+ */
+
+/**
+ * SMACSS
+ * 조나단 스눅 개발
+ * Scalable and Modular Architecture for CSS
+ * CSS를 위한 확장 가능한 모듈 형태의 아키텍쳐
+ * 모듈
+ * 1. 카테고리 분류
+ * 1.1. base
+ * - 사이트 내에서 공통으로 쓰이는 CSS
+ * - Header or Footer 공통으로 쓰이는 CSS
+ * 1.2. layout
+ * - 레이아웃 관련 모든 CSS
+ * - 레이아웃에 관련된 모든 것
+ * 1.3. module
+ * - 모듈 관련 모든 CSS
+ * - btn module, carousel module
+ * 1.4. state
+ * - 버튼이 눌려져 있을 때의 상태
+ * - XX의 상태에 대한 CSS를 전부 넣음
+ * - is-error {}
+ * - is-active {} 
+ * 1.5. theme
+ * - 특정한 클래스별로 테마를 별도로 줘야할 때
+ */
+/**
+ * 클래스명 : 의미에 맞추어, 내가 사용하는 목적
+ * header - user_menu
+ * header - search_box
+ * 레이아웃, fixed 레이아웃
+ * l_fixed
+ * l_dynamic
+ * l_dynamic l_rwd (반응형 웹 디자인 유동 레이아웃)
+ * 버튼
+ * btn
+ * btn_search
+ * btn_close
+ * btn_move
+ * btn_????
+ */
+
+/**
+ * base
+ */
+body {
+    margin:0;
+    font-family: sans-serif;
+}
+ul, li {
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.clearfix:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+/**
+ * layout
+ * SMACSS의 레이아웃 : 큰 단위 레이아웃
+ * id셀렉터 사용 이유 : id는 한 HTML 내에서 중복 X
+ */
+#header {}
+#main-content {
+    width:1010px;
+    margin:auto;
+}
+#footer {}
+
+/**
+ * Module
+ */
+/**
+ * .gnb 모듈
+ */
+.gnb {
+    background:#eee;
+}
+/**
+ * search_box 모듈
+ */
+.gnb .search_box {
+    float:left;
+    padding:0.5em 1em;
+}
+.gnb .search_box input {
+    background:none;
+    border:0;
+    font-size:0.8em;
+}
+.gnb .search_box input::-webkit-input-placeholder {
+    color:gray;
+}
+/**
+ * user_menu 모듈
+ */
+.gnb .user_menu {
+    float:right;
+}
+.gnb .user_menu li {
+    position:relative;
+    float:left;
+    list-style:none;
+    padding:0.8em 1em;
+    font-size:0.9em;
+    line-height:1;
+}
+.gnb .user_menu li + li:before {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0.9em;
+    display:block;
+    width:1px;
+    height:0.7em;
+    background:#999;
+}
+.gnb .user_menu li a {
+    color:#666;
+    text-decoration:none;
+}
+/**
+ * 로고
+ */
+header h1 {
+    text-align:center;
+}
+header h1 img {
+    width:361px;
+    height:56px;
+}
+
+/**
+ * 메인 메뉴
+ */
+header .main_menu {
+    width:1010px;
+    margin:auto;
+}
+header .main_menu li {
+    float:left;
+    width:16.666666%;
+}
+header .main_menu li a {
+    display:block;
+    padding:0.5em 0;
+    color:#000;
+    text-decoration: none;
+    text-align:center;
+    transition:0.3s all;
+    font-weight:bold;
+}
+header .main_menu li a:hover {
+    color:#fff;
+    background:#000;
+}
+
+main .image-slider {
+    width:100%;
+    height:600px;
+    font-size:0;
+    overflow:hidden;
+}
+main .image-slider .image-mask {
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+main section {
+
+}
+main section h2 {
+    text-align:center;
+    font-weight:300;
+}
+main section li {
+    position:relative;
+    float:left;
+    width:33.333333%;
+}
+main section li a {
+    color:black;
+}
+main section li dl {
+    position:absolute;
+    width:100%;
+    left:0;
+    bottom:0;
+    margin:0;
+    padding:0.7em;
+    background:rgba(255,255,255,0.7);
+    text-align:center;
+}
+main section li dt {
+    font-size:1.4em;
+    font-weight:200;
+}
+main section li dd {
+    margin:0;
+    font-size:1em;
+    font-weight:200;
+}
+/**
+ * 클래스 네임
+ * 지양(하지 말아야 할 것)해야 하는 것들
+ * 1. id 셀렉터는 되도록 사용하지 말 것
+ * - JS에서 쓰는 케이스가 많음
+ * - 셀렉터 간의 우선순위가 많이 꼬임
+ * - 나중에 선언한 CSS가 묻히는 경우
+ * 2. 생략 가능한 셀렉터는 생략할 것
+ * - .main-menu ul li a {}
+ * - .main-menu ul {}
+ * - .main-menu li {}
+ * - .main-menu a {}
+ * 3. !important는 사용하지 말것
+ * - CSS를 우선순위와 상관없이 강제로 넣는 코드
+ * - 나중에 선언한 CSS가 100% 묻혀요
+ * - xx를 강제로
+ * 4. 클래스명은 자유, 본인이 규칙을 만들어서 사용할 것
+ * - 기본원칙: 숫자, 언더바를 제외한 특수기호로 시작하지 않는 영어
+ * - 모듈명 vs 의미
+ * - 항공권, 선택, 출발지
+ * - 항공권, 선택, 도착지
+ * - 의미: .flight_departure
+ * - 의미: .flight_destination
+ * - 모듈: .m-select
+ * 5. 요소셀렉터는, 특정 요소의 자식 요소에서만 사용할 것
+ * - 이 요소가 어디서 몇번이나 어느 자식으로 쓰일 지 모르기 때문
+ * - HTML을 짜다보면, 예기치 못한 변수
+ * - article 밑 section, section 밑에 section
+ * - 자식요소의 맨 아랫 자식
+ * - nav > ul > li > a > ul > li > a
+ * - 메인메뉴 - 서브메뉴
+ * - nav ul {}
+ * - .main-menu {}
+ * - .main-menu > li {}
+ * - .sub-menu
+ * - .sub-menu > li {}
+ */
+
+/**
+ * CSS 설계 기본원칙
+ * 공통 CSS를 먼저 작성할 것
+ * - 디테일 페이지 별점
+ * - 공통 모듈을 먼저 개발
+ * 레이아웃 구현
+ * - 공통 레이아웃 (header, main, footer)
+ * - 공통 레이아웃은 어떤 상황이더라도 대처할 수 있도록
+ * - 디테일한 레이아웃은 추후에
+ * - main, sub페이지의 레이아웃을 먼저 짜두세요
+ * - main > .main-content
+ * - main > .sub-content + .side-menu
+ * - main > .detail_content + .side-menu
+ * - l- (저같은 경우에는 많이 안씀)
+ * - l-sub-content {}
+ * 모듈 구현
+ * - A 위치에서 B 위치로 가도 잘 나와야함
+ * - header 요소의 자식이던, main 요소의 자식이던 그 모듈은 잘 나와야한다.
+ * - === 클래스를 잘 활용할 것
+ * - m-select {}
+ * - m-search {}
+ * - header nav ul li a {}
+ * - .gnb {}
+ * - .gnb ul {}
+ * - .gnb li {}
+ * - .gnb a {}
+ * - .gnb a.is-active {}
+ * - .gnb a.is-disable {}
+ */
+header {}
+section {}
+/*
+<div class="flight_search flight_oneway">
+    <div class="m_search">
+        <div class="m_select flight_depearture"></div>
+        <div class="m_select flight_destination"></div>
+    </div>
+</div>
+<div class="flight_search flight_round"></div>
+<div class="flight_search flight_multi"></div>
+*/
+
+
