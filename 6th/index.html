@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>이미지와 성능 최적화</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="image.css"/>
+    </head>
+    <body>
+        <!--
+        ---- 성능최적화
+        ---- 웹페이지에서 내 사이트가 잘 보이도록
+        ---- 잘 -> 빠르게 잘
+        ---- 1초 이내 (UX)
+        ---- HTTP Request 횟수 줄이기 (1번째 수업)
+        ----- HTML관점 : 코드 압축
+        ----- CSS관점 : IR 기법, CSS-Sprite 기법
+        ----- JS관점 : minify, uglify, reflow나 repaint 줄이기
+        ----- 다음시간 : Browser가 어떻게 동작하는 지
+[렌더링 엔진 / 브라우저 엔진]
+[현행]
+1. Webkit (SAFARI)
+2. Blink (Chrome, Opera)
+3. Trident (MS Edge, MS IE)
+4. Gecko (Firefox)
+
+[미래 / 엄청 빠름]
+5. Servo (Firefox의 미래버전 / 예정)
+
+[퇴물]
+6. Presto (Opera의 이전버전에 탑재)
+
+[자바스크립트 엔진]
+[현행]
+1. JavaScript Core (Safari)
+2. V8 Engine (Chrome, Opera)
+3. Chakra (MS)
+4. SpiderMonkey (firefox)
+        -->
+        <a href="#" class="m_sp m_sp_home">
+            <!-- before -->
+            홈
+            <!-- after -->
+        </a>
+        <div class="sp sp_window">검색창</div>
+        <object data="logo.svg">
+            <!-- call back image -->
+            <img src="sp_main.png" alt="">
+        </object>
+        <img src="logo.svg" alt=""/>
+        <div class="sp sp_me">me</div>
+        <i class="fa fa-shopping-cart"></i>
+    </body>
+</html>

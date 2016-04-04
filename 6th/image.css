@@ -1,0 +1,143 @@
+/**
+ * 이미지를 CSS상에서 사용할 때
+ * background-image
+ * background-position
+ * background-repeat
+ * background-size (모바일에서만 사용)
+ * 이미지 타입
+ * gif (투명 나타낼 수 있는데, 투명 그라데이션 X, 반투명 그림자 표현 X)
+ * png-8 (투명 나타낼 수 있는데, 투명 그라데이션 X, 반투명 그림자 표현 X)
+ * jpg, jpeg (투명색 표현 불가)
+ * png-24 (위에 나오는 거 다 됨, 용량이 큼)
+ * svg (벡터, 모든 환경에서 이미지가 깨지지 않음, 브라우저 지원율이 약간 낮음)
+
+ * sp_naver.png
+ * jpg로 저장 (퀄리티)
+ * 퀄리티가 100에 가까울수록 더 선명
+ * 100 - 213.6kb
+ * 30 - 56.48kb
+ * jpeg가 용량이 큰 이유 : 배경에 흰색이 들어가서
+ * 투명인 친구가 조금 더 데이터를 적게 먹음
+ * GIF - 56.86kb (256 color)
+ * png-8 - 42.21kb (256 color)
+ * png-24 - 99.64kb (왠만한 컬러 다 표현)
+ */
+
+/**
+ * 하나의 이미지에 여러개의 아이콘, 불렛, 크롬(이뻐보이려고 쓰는 이미지)을 지칭하는 게
+ * 스프라이트 이미지 (Sprite Image)
+ * 슈퍼패미콤(현대컴보이), 게임팩 용량
+ * 슈퍼마리오 용량 (320kb)
+ * 이미지의 기본 원칙
+ * 1. 여러 색상을 사용하면 용량이 커짐
+ * 2. 한 이미지 내에서, 한 색상을 많이 사용하면, 용량이 줌
+ * 현대에 들어서... 인터넷 속도가 되게 빠름
+ * (한국, 일본이 빠른편)
+ * 데이터 종량제 (용량을 줄여하고... 용량을 줄이면 속도가 빨라짐)
+ */
+
+.sp {
+    display:block;
+    /*
+     * sprite image 전용 CSS 클래스
+     */
+    background-image:url(sp_main.png);
+    background-repeat:no-repeat;
+    /**
+     * background로 넣었으니..
+     * 당연히 배경에 모든 아이콘이 나옴
+     */
+    
+    /**
+     * IR기법
+     * Image Replacement
+     * 이미지 대체 기법
+     */
+    /**
+     * pharks method
+     * text-indent: -9999px;
+     * ///
+     * https://css-tricks.com/the-image-replacement-museum/
+     */
+     font-size:0;
+     line-height:0;
+     color:transparent;
+}
+
+.m_sp {
+    /**
+     * before가 있을 때는 text-indent가 먹히지 않음
+     * 모바일에서는 버튼사이즈 가로 세로 30 이상이어야 그래도 클릭 가능
+     */
+    display:block;
+    line-height:0;
+    color:transparent;
+}
+.m_sp_home {
+    padding:10px;
+}
+.m_sp:before {
+    /* 
+     * CSS 2.1과 3이 있음. 4도 진행중
+     * : CSS 2.1 문법 / IE8까지 지원
+     * :: CSS 3 문법 / IE9까지 지원
+     */
+    content:''; /* 생성된 요소 안에 들어갈 콘텐츠 */
+    display:block; /* 생성된 요소는 원래는 inline 요소 */
+    background-image:url(sp_main.png);
+    background-repeat:no-repeat;
+    background-size:220px auto;
+}
+.m_sp_home:before {
+    width:24px;
+    height:15px;
+}
+.sp_home {
+    width:24px;
+    height:15px;
+}
+.sp_window {
+    width:47px;
+    height:31px;
+    background-position: -48px 0;
+}
+.sp_me {
+    width:47px;
+    height:31px;
+    background-position: -95px 0;
+}
+
+/**
+ * 11주차 도구
+ * sprite 이미지를 자동 생성
+ * sprtie 좌표를 자동으로 CSS로 생성해줌
+ */
+
+/**
+ * 아이콘 폰트 :
+ * http://weloveiconfonts.com/
+ */
+.fa-shopping-cart {
+    font-size:18px;
+    color:blue;
+}
+
+/**
+ * 퍼포먼스 측정
+ * 1. 보기가 좀 어렵더라도 NETWORK 탭이랑, TIMELINE 탭을 살펴보세요
+ * - https://kimshinelove.github.io/category/2016/03/12/chrome-developtools-timeline-1.html
+ * - https://kimshinelove.github.io/category/2016/03/13/performance-profiling-with-the-timeline.html
+ * 2. 내가 만든 사이트는 내가 봤을 때는 무결성
+ * 3. pagespeed를 이용해서 본인 사이트의 속도를 어느정도는 측정할 수 있다.
+ * 4. throtlling에서 3G 환경으로 테스트 해볼것
+ */
+
+
+
+
+
+
+
+
+
+
